@@ -1,0 +1,289 @@
+@import "../global.scss";
+
+.Header01{
+    position: relative;
+    width: 99.8%;
+    min-height: 618px !important;
+    max-height: 618px !important;
+    @include addborder(red);
+    
+    display: flex;
+    justify-content: center;
+    
+    .Header01Wrapper{
+        margin: 30px 120px;
+        width: 100%;
+        @include addborder(red);
+        display: flex;
+        flex-direction: column;
+        
+        .navBar{
+            @include addborder(red);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            user-select: none;
+            color: $black;
+
+            .navBarLeft{
+                //@include addborder(blue);
+                .navItem{
+                    margin-right: 30px;
+                    cursor: pointer;
+
+                    &:first-of-type{
+                        font-size: 1.2em;
+                        font-weight: bolder !important;
+                        color: $black;
+                    }
+
+                    &:last-of-type{
+                        margin-right: 0px;
+                    }
+                }
+            }
+            .navBarRight{
+                //@include addborder(blue);
+                .signinBt{
+                    margin-right: 30px;
+                    cursor: pointer;
+                    white-space: nowrap;
+                }
+                .signupBt{
+                    cursor: pointer;
+                    background-color: $yellow;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    color: $white; 
+                    white-space: nowrap;
+                }
+            }
+        }
+        .navContent{
+            @include addborder(blue);
+            flex: 1;
+
+            display: flex;
+            flex-direction: row;
+            padding-top: 80px;
+            
+            .navContentLeft{
+                flex: 6;
+                @include addborder(red);
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .navContentLeftHead{
+                    @include addborder(yellow);
+                    .theInfos{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        padding: 10px 0px;
+                        padding-top: 0px;
+                        //user-select: none;
+                        margin-bottom: 20px;
+                        
+                        .shoesDesc{
+                            color: $grey;
+                            font-size: 1em;
+                            margin: 10px 1px;
+                            margin-top: 0px;
+                        }
+                        .shoesName{
+                            color: $black;
+                            font-size: 2.5em;
+                            max-width: 200px;
+                            text-align: left;
+                            margin: 10px 0px;
+                        }
+                        .shoesPrice{
+                            margin: 10px 1px;
+                            font-size: 1.5em;
+                            color: $grey;
+                        }
+                    }
+                    .theButton{
+                        display: flex;
+                        
+                        justify-content: flex-start;
+
+                        .addtoCartBt{
+                            color: $white;
+                            background-color: $blue;
+                            padding: 15px 30px;
+                            border-radius: 15px;
+                            font-weight: 600 !important;
+                            cursor: pointer;
+
+                            white-space: nowrap;
+                        }
+                    }
+                }
+                .navContentLeftFoot{
+                    display: flex;
+                    flex-direction: row;
+                    //@include addborder(yellow);
+
+                    .navContentLeftFootLeft{
+                        position: relative;
+                        margin-right: 10px;
+                        //@include addborder(blue);
+
+                        .photoBgcolor{
+                            position: absolute;
+                            background-color: $yellow;
+                            width: 56px;
+                            height: 56px;
+
+                            left: 0px;
+                            top: 0px;
+                            border-radius: 10px;
+                        }
+                        .photoFgImg{
+                            position: relative;
+                            left: 0px;
+                            top: 0px;
+                            width: 68px;
+                            height: 68px;
+                            background-position: center;
+                            background-size: 100%;
+                            background-repeat: no-repeat;
+                            background-image: url('./imgs/Air Jordan 6 Retro.png');
+                            background-color: transparent;
+                        }
+                    }
+                    .navContentLeftFootRight{
+                        //@include addborder(blue);
+                        display: flex;
+                        flex-direction: column;
+                        .shoesName{
+                            //@include addborder(blue);
+                            white-space: nowrap;
+                            margin-bottom: 5px;
+                        }
+                        .shoesOthers{
+                            display:flex;
+                            flex-direction: row;
+                            color: $grey;
+                            justify-content: space-between;
+
+                            .shoesPrice{
+                                
+                            }
+                            .plusBt{
+                                padding: 5px 20px;
+                                filter: grayscale(0%);
+                                cursor: pointer;
+                                user-select: none;
+
+                            }
+                        }
+                    }
+                }
+            }
+            .navContentRight{
+                flex: 12;
+                //@include addborder(red);
+                display: flex;
+
+                width: 100%;
+                position: relative;
+                width: 100%;
+                border-radius: 10px;
+                @include addborder(red);
+
+                .navContentRightWrapper{
+                    position: relative;
+                    width: 100%;
+                    border-radius: 20px;
+                    height: 82%;
+                    @include addborder(green);
+                    //margin: 10px;
+
+                    display: flex;
+                    flex-direction: row;
+
+                    .navContentRightWrapperLeft{
+                        flex: 12;
+                        @include addborder(green);
+                        position: relative;
+                        //overflow: hidden;
+                        .bigShoesBgcolor{
+                            position: absolute;
+                            width: 400px;
+                            height: 400px;
+                            background-color: $blue;
+                            border-radius: 50%;
+                            left: 0px;
+                            top: 0px;
+                        }
+                        .bigShoesBgImg{
+                            position: absolute;
+                            left: -50px;
+                            top: 0px;
+                            width: 500px;
+                            height: 500px;
+                            background-image: url('./imgs/bigShoe.png');
+                            background-size: 110%;
+                            background-position: center;
+                            filter: drop-shadow(0px 0px 8px rgba(255,255,255,0.5));
+                        }
+                    }
+                    .navContentRightWrapperRight{
+                        flex: 3;
+                        position: relative;
+                        display: flex;
+
+                        //@include addborder(green);
+                        .navContentRightWrapperRightWrapper{
+                            //@include addborder(red);
+                            display: flex;
+                            width: 100%;
+                            align-items:center;
+
+                            .shoesBox{
+                                position: relative;
+                                display: flex;
+                                
+                                @include addborder(red);
+                                flex-direction: column;
+                                width: 100%;
+                                min-height: 200px;
+                                justify-content: space-between;
+                                align-items: center;
+                               
+                                .shoesItem{
+                                    flex: 1;
+                                    position: relative;
+                                    width: 100%;
+                                    
+                                    background-size: 50%;
+                                    background-position: right;
+                                    background-repeat: no-repeat;
+                                    cursor: pointer;
+                    
+                                    &:nth-child(1){
+                                        background-image: url('./imgs/tinyShoe01.png');
+                                    }
+                                    &:nth-child(2){
+                                        flex: 2;
+                                        background-image: url('./imgs/tinyShoe02.png');
+                                    }
+                                    &:nth-child(3){
+                                        background-image: url('./imgs/tinyShoe03.png');
+                                    }
+                                    &:hover{
+                                        filter: drop-shadow(-4px 4px 4px gray);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

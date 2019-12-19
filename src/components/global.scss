@@ -1,0 +1,10 @@
+@mixin addborder($color){
+    border: 0.5px solid $color;
+} 
+
+$yellow:#FFA900;
+$grey: #676767;
+$black: #151517;
+$blue: #4D66FF;
+$white: #ffffff;
+$lightgrey: #f1f1f1;

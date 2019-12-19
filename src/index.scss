@@ -3,10 +3,17 @@
 body {
   margin: 0;
   font-family: 'Libre Franklin', sans-serif;
+  font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: 'Libre Franklin', sans-serif;
+}
+
+*:not(.mee-icon):not(.fa):not(i):not(em){
+  /*font-family: 中文楷体,sans-serif,auto;*/
+  font-weight: 500 !important;
+  text-shadow: none !important;
 }
