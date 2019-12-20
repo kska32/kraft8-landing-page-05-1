@@ -1,5 +1,130 @@
 @import '../global.scss';
 
 .Content03{
+    @include mediumPageSize();
+
+    @include addborder(blue);
+    background-color: $lightgrey;
     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .Content03Wrapper{
+        @include addborder(red);
+        @include pageWrapperMediumMargin();
+        
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        height: 80%;
+        justify-content: space-between;
+        
+        .Content03WrapperLeft{
+            position: relative;
+            flex: 9;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-right: 0px;
+
+            @include addborder(green);
+            .Content03WrapperLeftHead{
+                @include addborder(orange);
+                position: relative;
+                width: 100%;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 20px;
+
+                .theTitle{
+                    position: relative;
+                    width: 70%;
+                    color: $black;
+                    @include h1size();
+                    margin-bottom: 10px;
+                    font-weight: 600 !important;
+                }
+                .theDescs{
+                    position: relative;
+                    width: 65%;
+                    color: $grey;
+                    margin-bottom: 30px;
+                    line-height: 1.6em;
+                }
+            }
+            .Content03WrapperLeftFoot{
+                @include addborder(orange);
+                position: relative;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                .someInfos{
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    text-align: left;
+                    width: 80%;
+                    justify-content: space-between;
+                    margin-bottom: 40px;
+                    .infoA{
+                        margin-right: 20px;
+                        line-height: 1.6em;
+                        .theTitle{
+                            color: $black;
+                            font-size: 1.16em;
+                        }
+                        .theDescs{
+                            color: $grey;
+                        }
+                    }
+                    .infoB{
+                        line-height: 1.6em;
+                        .theTitle{
+                            color: $black;
+                            font-size: 1.16em;
+                        }
+                        .theDescs{
+                            color: $grey;
+                        }
+                    }
+                }
+
+                .getStartedBT{
+                    .theButton{
+                        @include largeButton();
+                    }
+                }
+            }
+        }
+        .Content03WrapperRight{
+            flex: 5;
+            @include addborder(blue);
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            
+            .theImage{
+                position: relative;
+               // width: calc(445px * 0.8);
+               // height: calc(640px * 0.8);
+                width: 100%;
+                height: 100%;
+                background-image: url('./imgs/brands.png');
+                background-size: cover;
+                background-position: 45% 50%;
+                background-repeat: no-repeat;
+                
+            }
+        }
+    }
 }

@@ -1,5 +1,96 @@
 @import '../global.scss';
 
 .Footer09{
-    
+    @include addborder(blue);
+    @include mediumPageSize(360px);
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    //justify-content: center;
+    padding-top: 60px;
+    //padding-bottom: 60px;
+
+    .Footer09Wrapper{
+        @include addborder(grey);
+        @include pageWrapperMediumMargin(0px);
+        position: relative;
+
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .Footer09WrapperLeft{
+            position: relative;
+            @include addborder(red);
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .Footer09WrapperLeftHead{
+                @include addborder(red);
+                position: relative;
+                width: 80%;
+                text-align: left;
+                margin-bottom: 160px;
+                .theTitle{
+                    color: $black;
+                    font-weight: 600 !important;
+                    text-shadow: 0px 0px 1px rgba(0,0,0,0.5);
+                    font-size: 1.25em;
+                    //line-height: 3em;
+                    margin-bottom: 1.5em;
+                }
+                .theDescs{
+                    color: $grey;
+                    line-height: 1.6em;
+                }
+            }
+
+            .Footer09WrapperLeftFoot{
+                @include addborder(red);
+                text-align: left;
+                color: $grey;
+                line-height: 1.6em;
+            }
+        }
+
+        .Footer09WrapperRight{
+            position: relative;
+            @include addborder(red);
+            width: 60%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-left: 120px;
+            box-sizing: border-box;
+            
+            .col01, .col02, .col03{
+                position: relative;
+                @include addborder(red);
+                text-align: left;
+                .theHead{
+                    font-size: 1.16em;
+                    color: $black;
+                    cursor: pointer;
+                    margin-bottom: 1.5em;
+                }
+                .theItem{
+                    color: $grey;
+                    cursor: pointer;
+                    margin-top: 1.15em;
+                    margin-bottom: 1.15em;
+                    white-space: none;
+
+                    a{
+                        text-decoration: none;
+                        color: $grey;
+                    }
+                }
+            }
+        }
+    }
 }

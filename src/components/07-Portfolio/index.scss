@@ -1,5 +1,141 @@
 @import '../global.scss';
 
 .Portfolio07{
+    @include addborder(red);
+    @include mediumPageSize();
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    overflow: hidden;
     
+    .PortFolio07Head{
+        @include addborder(blue);
+        position: relative;
+        @include pageWrapperMediumMargin(0px);
+        margin-bottom: 80px;
+
+        .PortFolio07HeadWrapper{
+            position: inherit;
+            .theTitle{
+                font-size: 1.25em;
+                line-height: 1.25em;
+                font-weight: 600 !important;
+                margin-bottom: 10px;
+                color: $yellow;
+                letter-spacing: 10px;
+            }
+            .theDescs{
+                @include h1size();
+                color: $black;
+                margin: 20px 0px 30px;
+            }
+        }
+    }
+    .PortFolio07Body{
+        @include addborder(red);
+        position: relative;
+        @include pageWrapperMediumMargin(0px);
+
+        display: flex;
+        flex-direction: row;
+        
+
+        .PortFolio07BodyLeft{
+            @include addborder(grey);
+            position: relative;
+            width: 50%;
+
+            .PortFolio07BodyLeftBox{
+                position: relative;
+                
+                .bluecircle{
+                    position: relative;
+                    width: 400px;
+                    height: 400px;
+                    border:1px solid red;
+                    border-radius: 50%;
+                    background-color: $blue;
+
+                    @include addborder(red);
+                    
+
+                    .phone01{
+                        position: absolute;
+                        width: 450px;
+                        height: 450px;
+    
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+    
+                        left: -170px;
+                        top: -70px;
+                        pointer-events: none;
+
+                        filter: drop-shadow(0px 0px 8px rgba(0,0,0,0.36));
+                    }
+                    .phone02{
+                        position: absolute;
+                        width: 520px;
+                        height: 520px;
+    
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+    
+                        right: -190px;
+                        bottom: -150px;
+
+                        pointer-events: none;
+                        filter: drop-shadow(0px 0px 8px rgba(0,0,0,0.5));
+                    }
+                }
+               
+            }
+        }
+
+        .PortFolio07BodyRight{
+            @include addborder(grey);
+            position: relative;
+            width: 50%;
+
+            box-sizing: border-box;
+            padding-left: 30px;
+            padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .PortFolio07BodyRightBox{
+                @include addborder(blue);
+                position: inherit;
+
+                width: 80%;
+                text-align: left;
+
+                .PortFolio07BodyRightBoxHead{
+                    position: relative;
+                    margin-bottom: 50px;
+                    .theTitle{
+                        @include h2size();
+                        margin-bottom: 20px;
+                        color: $black;
+                    }
+                    .theDescs{
+                        color: $grey;
+                        line-height: 1.5em;
+                    }
+                }
+                .PortFolio07BodyRightBoxBody{
+                    position: relative;
+                    display: flex;
+                    .viewBt{
+                        @include largeButton();
+                    }
+                }
+            }
+        }
+    }
 }

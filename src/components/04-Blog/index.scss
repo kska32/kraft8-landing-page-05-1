@@ -1,5 +1,118 @@
 @import '../global.scss';
 
 .Blog04{
+    //@include mediumPageSize();
+
+    @include addborder(red, dashed);
+    background-color: $white;
     
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .Blog04Wrapper{
+        @include pageWrapperMediumMargin();
+        position: relative;
+        width: 100%;
+        //@include addborder(red);
+
+        display: flex;
+        flex-direction: column;
+
+        .Blog04WrapperHead{
+            //@include addborder(blue,dashed);
+            display: flex;
+            justify-content: center;
+            .Blog04WrapperHeadWrapper{
+                //@include addborder(red,dashed);
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                width: 360px;
+
+                .theTitle{
+                    @include h1size();
+                    margin-top: 100px;
+                    margin-bottom: 15px;
+                    color: $black;
+                }
+                .theContent{
+                    color: $grey;
+                    line-height: 1.6em;
+                    margin-bottom: 50px;
+                }
+            }
+        }
+        .Blog04WrapperBody{
+            @include addborder(blue,dashed);
+            position: relative;
+            width: 100%;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .Blog04WrapperBodyItem{
+                //@include addborder(green, dotted);
+                position: inherit;
+                padding: 16px 0px;
+
+                width: 320px;
+                height: 380px;
+                text-align: left;
+                margin-bottom: 150px;
+  
+                .Blog04WrapperBodyItemPhoto{
+                        position: inherit;
+                        width: 100%;
+                        height: 100%;
+
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        border-radius: 20px;
+                        background-size: cover;
+
+                        margin-bottom: 30px;
+
+                        .colorfulBT{
+                            position: absolute;
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 5px;
+                            background-color: $white;
+
+                            bottom: 20px;
+                            right: 20px;
+
+                            cursor: pointer;
+                        }
+                }
+                .theTitle{
+                    color: $black;
+                    font-size: 1.16em;
+                    line-height: 1.5em;
+                    margin-bottom: 10px;
+                }
+                .theContent{
+                    color: $grey;
+                    line-height: 1.6em;
+                }
+
+                &:nth-of-type(1){
+                    .colorfulBT{
+                        background-color: $yellow;
+                    }
+                }
+
+                &:nth-of-type(3){
+                    .Blog04WrapperBodyItemPhoto{
+                        background-position: 80% 50%;
+                    }
+                }
+
+            }
+
+            //...
+        }
+    }
 }

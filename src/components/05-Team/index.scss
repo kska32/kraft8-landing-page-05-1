@@ -1,2 +1,160 @@
 @import '../global.scss';
 
+.Team05{
+    //@include mediumPageSize();
+    background-color: $lightgrey;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+
+    .Team05head{
+        //@include addborder(red);
+        display: flex;
+        justify-content: center;
+        .Team05headWrapper{
+            //@include addborder(blue);
+            @include h1size();
+            position: inherit;
+            width: 300px;
+            margin-top: 80px;
+            margin-bottom: 50px;
+        }
+    }
+
+    .Team05body{
+        //@include addborder(black,dashed);
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+
+        .Team05bodyWrapper{
+            position: inherit;
+            width: 100%;
+            overflow-x: hidden;
+            //background-color: grey;
+
+            .Team05bodyWrapperItemsWrapper{
+                position: relative;
+                display: inline-flex;
+                //justify-content: space-between;
+                width: 100%;
+                animation: carouselTeam 6s ease-in-out both infinite alternate-reverse;
+                margin-bottom: 80px;
+                //@include addborder(red);
+
+                &:hover{
+                    animation-play-state: paused;
+                }
+
+                @keyframes carouselTeam{
+                    0%{
+                        transform: translateX(0%);
+                    }
+                    100%{
+                        transform: translateX(-25%);
+                    }
+                }
+                
+                .Team05bodyWrapperItem{
+                    //@include addborder(cyan);
+                    position: relative;
+                    padding: 15px;
+                    min-width: 25%;
+                    max-width: 25%;
+                    box-sizing: border-box;
+                    cursor: pointer;
+
+                    &:hover{
+                        .Team05bodyWrapperItemBox{
+                            .thePhoto{
+                                box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.25);
+                                border-radius: 20px;
+                            }
+                            .theTitle{
+                                text-shadow: 0px 0px 2px rgba(0,0,0,0.25) !important;
+                            }
+                            .theJob{
+                                text-shadow: 0px 0px 2px rgba(0,0,0,0.25) !important;
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                    .Team05bodyWrapperItemBox{
+                        position: relative;
+                        width: 100%;
+                        //height: 500px;
+                        text-align: left;
+                        
+                        .thePhoto{
+                            position: relative;
+                            width: 100%;
+                            height: 400px;
+
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-position: center;
+
+                            border-radius: 20px;
+                            margin-top: 10px;
+                            margin-bottom: 20px;
+                            
+                        }
+                        .theTitle{
+                            color: $black;
+                            margin-bottom: 10px;
+                            font-size: 1.16em;
+                            font-weight: 600 !important;
+                        }
+                        .theJob{
+                            color: $blue;
+                            font-weight: 600 !important;
+                        }
+                    }
+
+                    &:nth-of-type(1){
+                        .Team05bodyWrapperItemBox{
+                            .thePhoto{
+                                background-size: 120%;
+                                background-position: 50% 100%;
+                            }
+                        }
+                    }
+                    &:nth-of-type(2){
+                        .Team05bodyWrapperItemBox{
+                            .thePhoto{
+                                background-size: 160%;
+                                background-position: 50% 20%;
+                            }
+                        }
+                    }
+                    &:nth-of-type(3){
+                        .Team05bodyWrapperItemBox{
+                            .thePhoto{
+                                background-size: 140%;
+                                background-position: 50% 80%;
+                            }
+                        }
+                    }
+                    &:nth-of-type(4){
+                        .Team05bodyWrapperItemBox{
+                            .thePhoto{
+                                
+                                
+                            }
+                        }
+                    }
+                    &:nth-of-type(5){
+                        .Team05bodyWrapperItemBox{
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

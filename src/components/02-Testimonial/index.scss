@@ -1,13 +1,10 @@
 @import '../global.scss';
 
 .Testimonial02{
-    position: relative;
-    width: 99.8%;
-    min-height: 618px !important;
-    max-height: 618px !important;
+    @include mediumPageSize(900px);
     @include addborder(blue);
-    
     background-color: $blue;
+
     display: flex;
     justify-content: center;
 
@@ -33,7 +30,7 @@
             
                 .Testimonial02WrapperHeadWrapperTitle{
                     color: $white;
-                    font-size: 2em;
+                    @include h2size();
                     margin-bottom: 15px;
                 }
                 .Testimonial02WrapperHeadWrapperContent{

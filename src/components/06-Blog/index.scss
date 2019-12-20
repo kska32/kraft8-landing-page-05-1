@@ -1,5 +1,154 @@
 @import '../global.scss';
 
 .Blog06{
+    //@include mediumPageSize();
+    @include addborder(red);
+    background-color: $lightgrey;
+    position: relative;
+    width: 100%;
     
+
+    .Blog06Wrapper{
+        @include addborder(blue);
+        @include pageWrapperMediumMargin(0px);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        
+        .Blog06WrapperHead{
+            @include addborder(red);
+            margin-top: 100px;
+            margin-bottom: 30px;
+            position: relative;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+           
+            .Blog06WrapperHeadWrapper{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                @include addborder(blue);
+                width:  400px;
+
+                .title01{
+                    font-size: 1.25em;
+                    line-height: 1.25em;
+                    font-weight: 600 !important;
+                    margin-bottom: 10px;
+                    color: $yellow;
+
+                    letter-spacing: 10px;
+                }
+                .title02{
+                    @include h1size();
+                    color: $black;
+                    margin: 20px 0px 30px;
+                }
+            }
+        }
+
+        .Blog06WrapperBody{
+            position: relative;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 100px;
+            
+
+            .Blog06WrapperBodyItem{
+
+                position: relative;
+                padding: 15px;
+                box-sizing: border-box;
+
+                .Blog06WrapperBodyItemBox{
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    height: 350px;
+                    border-radius: 20px;
+
+                    @include addborder(blue);
+                    .theInfos{
+                        @include addborder(red);
+                        position: relative;
+                        width: 350px;
+                        height: 100%;
+                        padding: 30px;
+                        box-sizing: border-box;
+                        color: $white;
+                        text-align: left;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        .theInfosHead{
+                            line-height: 1.26em;
+                            .list01{
+                                margin-bottom: 8px;
+                            }
+                            .list02{
+                                color: #E8E8E8;
+                            }
+                        }
+                        .theInfosFoot{
+                            position: relative;
+                            display: flex;
+                            flex-direction: row;
+                            
+                            .avatar{
+                                position: relative;
+                                width: 40px;
+                                height: 40px;
+                                background-size: cover;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                margin-right: 10px;
+                            }
+                            .listGroup{
+                                position: relative;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                .listGroupList01{
+
+                                }
+                                .listGroupList02{
+                                    color: #E8E8E8;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:nth-of-type(1){
+                    width: 40%;
+                    padding-left: 0px;
+                    padding-top: 0px;
+                }
+                &:nth-of-type(2){
+                    width: 60%;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                }
+                &:nth-of-type(3){
+                    width: 60%;
+                    padding-left: 0px;
+                    padding-bottom: 0px;
+                }
+                &:nth-of-type(4){
+                    width: 40%;
+                    padding-right: 0px;
+                    padding-bottom: 0px;
+                }
+            }
+        }
+    }
 }

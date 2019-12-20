@@ -1,10 +1,63 @@
-@mixin addborder($color){
-    border: 0.5px solid $color;
-} 
-
 $yellow:#FFA900;
 $grey: #676767;
 $black: #151517;
 $blue: #4D66FF;
 $white: #ffffff;
 $lightgrey: #f1f1f1;
+
+
+@mixin addborder($color:black, $style:solid, $width:0.5px){
+    //border: $width $style $color;
+} 
+
+@mixin pageWrapperMediumMargin($hMargin:30px){
+    margin: $hMargin 120px;
+}
+
+@mixin h1size(){
+    font-size: 2.5em;
+    line-height: 1.36em;
+    font-weight: 600 !important;
+}
+
+@mixin h2size(){
+    font-size: 2em;
+    line-height: 1.25em;
+    font-weight: 600 !important;
+}
+
+@mixin largeButton($bgColor:$blue){
+    background-color: $bgColor;
+    padding: 15px 40px;
+    border-radius: 10px;
+    color: $white;
+    white-space: nowrap;
+    font-weight: 600 !important;
+    cursor: pointer;
+
+    &:hover{
+        opacity: 0.9 !important;
+        font-weight: 600 !important;
+    }
+}
+
+@mixin mediumButton($bgColor:$yellow){
+    cursor: pointer;
+    background-color: $yellow;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: $white; 
+    white-space: nowrap;
+    font-weight: 600 !important;
+    &:hover{
+        opacity: 0.9 !important;
+    }
+}
+
+@mixin mediumPageSize($height: 618px){
+    position: relative;
+    width: 100%;
+    min-height: $height !important;
+    max-height: $height!important;
+    height: $height !important;
+}
