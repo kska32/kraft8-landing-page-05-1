@@ -1,7 +1,7 @@
 {
   "name": "kraft8-landing-page-05-1",
   "version": "0.1.0",
-  "home": "./",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
