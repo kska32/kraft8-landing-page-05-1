@@ -56,7 +56,7 @@ export default class Blog06 extends Component{
                             BLOG
                         </div>
                         <div className='title02'>
-                            Live Today, Tomorrow Will Cost More
+                            Live Today, Tomorrow Will <br/> Cost More
                         </div>
                     </div>
                 </div>

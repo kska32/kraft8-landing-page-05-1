@@ -1,7 +1,6 @@
 @import '../global.scss';
 
 .Testimonial02{
-    @include mediumPageSize(900px);
     @include addborder(blue);
     background-color: $blue;
 
@@ -11,32 +10,57 @@
     display: flex;
     align-items: center;
 
+    @include mediumPageSizeResponsiveMin(650px, 750px, 850px, 950px);
+    @include mediumPageSizeResponsiveMax(650px, 600px, 550px, 500px, 450px, 400px);
+
+    overflow-x: hidden;
+
     .Testimonial02Wrapper{
         position: relative;
         //height: 400px;
         width: 100%;
-        @include addborder(red);
+        //@include addborder(red);
 
         .Testimonial02WrapperHead{
-            @include addborder(white);
+            //@include addborder(white);
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
             
             .Testimonial02WrapperHeadWrapper{
-                @include addborder(yellow);
+                //@include addborder(yellow);
                 position: relative;
-                width: 380px;
+                @include responsiveMin(width, 380px, 400px, 420px, 450px);
             
                 .Testimonial02WrapperHeadWrapperTitle{
                     color: $white;
                     @include h2size();
-                    margin-bottom: 15px;
+                    margin-bottom: 30px;
+
+                    @media (min-width: $mediaLarge){
+                        margin-bottom: 35px;
+                    }
+                    @media (min-width: $mediaBig){
+                        margin-bottom: 55px;
+                    }
+                    @media (min-width: $mediaHuge){
+                        margin-bottom: 75px;
+                    }
                 }
                 .Testimonial02WrapperHeadWrapperContent{
                     color: $white;
                     font-size: 1em;
-                    margin-bottom: 45px;
+                    margin-bottom:50px;
+
+                    @media (min-width: $mediaLarge){
+                        margin-bottom: 60px;
+                    }
+                    @media (min-width: $mediaBig){
+                        margin-bottom: 70px;
+                    }
+                    @media (min-width: $mediaHuge){
+                        margin-bottom: 80px;
+                    }
                 }
             }
         }
@@ -67,6 +91,8 @@
                         border-radius: 20px;
                         //margin: 0px 12px;
                         padding: 0px 12px;
+                        @include responsiveMax(padding, 0px 12px, 0px 10px, 0px 8px, 0px 6px, 0px 4px);
+
                         box-sizing: border-box;
 
                         display: flex;
@@ -77,20 +103,34 @@
                         .Testimonial02WrapperBodyWrapperItemInside{
                             background-color: $white;
                             border-radius: 20px;
-                            padding: 35px 30px;
-                            line-height: 1.5em !important;
 
+                            @include responsiveMin(line-height, 1.5em, 1.65em, 1.80em);
+                            @include responsiveMax(line-height, 1.5em, 1.40em, 1.38em, 1.35em, 1.10em);
+
+                            @include responsiveMin(padding, 35px 30px, 38px 33px, 43px 38px, 48px 43px, 53px 48px);
+                            @include responsiveMax(padding, 35px 30px, 30px 25px, 25px 20px, 20px 15px, 15px 10px);
+                            
                             .avatar{
                                 position: relative;
                                 background-position: center;
-                                width: 38px;
-                                height: 38px;
+
                                 background-repeat: no-repeat;
                                 background-size: 100%;
-                                margin-bottom: 20px;
+      
+                                @include responsiveMax(width,38px,35px,30px,25px,20px);
+                                @include responsiveMin(width,38px,42px,47px,52px,62px);
+
+                                @include responsiveMax(height,38px,35px,30px,25px,20px);
+                                @include responsiveMin(height,38px,42px,47px,52px,62px);
+
+                                @include responsiveMin(margin-bottom, 20px, 25px, 35px, 45px);
+                                @include responsiveMax(margin-bottom, 20px, 18px, 16px, 14px, 12px);
                             }
                             .comment{
                                 margin-bottom: 20px;
+
+                                @include responsiveMin(margin-bottom, 20px, 25px, 30px, 35px, 40px);
+                                @include responsiveMax(margin-bottom, 20px, 18px, 16px, 14px, 12px);
                             }
                             .thename{
                                 

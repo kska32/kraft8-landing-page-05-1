@@ -1,7 +1,9 @@
 @import '../global.scss';
 
 .Content03{
-    @include mediumPageSize();
+    //@include mediumPageSize();
+    @include mediumPageSizeResponsiveMin(700px, 750px, 800px, 850px);
+    @include mediumPageSizeResponsiveMax(700px, 650px, 600px, 500px, 400px, 300px);
 
     @include addborder(blue);
     background-color: $lightgrey;
@@ -9,6 +11,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    overflow-x: hidden;
 
     .Content03Wrapper{
         @include addborder(red);
@@ -48,6 +52,8 @@
                     @include h1size();
                     margin-bottom: 10px;
                     font-weight: 600 !important;
+
+                    @include responsiveMax(width, 70%, 80%)
                 }
                 .theDescs{
                     position: relative;
@@ -105,13 +111,15 @@
             }
         }
         .Content03WrapperRight{
-            flex: 5;
+            flex: 6;
             @include addborder(blue);
             position: relative;
             width: 100%;
             height: 100%;
             border-radius: 20px;
             overflow: hidden;
+
+            //@include responsiveMax(height, 100%, 95%, 85%, 80%, 75%, 70% );
             
             .theImage{
                 position: relative;

@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap');
+@import './components/global.scss';
 
 body {
   margin: 0;
   font-family: 'Libre Franklin', sans-serif;
   font-size: 14px;
+  line-height: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @include responsiveMin(font-size, 14px, 15px, 16px, 17px, 20px);
+  @include responsiveMax(font-size, 14px, 13px, 11px, 9px, 7px);
 }
 
 code {

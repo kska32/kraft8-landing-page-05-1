@@ -2,18 +2,23 @@
 
 .Portfolio07{
     @include addborder(red);
-    @include mediumPageSize();
+    //@include mediumPageSizeResponsiveMin(618px, 688px, 774px, 826px);
+    //@include mediumPageSizeResponsiveMax(618px, 575px, 500px, 420px, 360px);
 
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 10%;
+    padding-bottom: 10%;
     position: relative;
     overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    //justify-content: space-between;
     
     .PortFolio07Head{
         @include addborder(blue);
         position: relative;
         @include pageWrapperMediumMargin(0px);
-        margin-bottom: 80px;
+        margin-bottom: 30px;
 
         .PortFolio07HeadWrapper{
             position: inherit;
@@ -24,11 +29,18 @@
                 margin-bottom: 10px;
                 color: $yellow;
                 letter-spacing: 10px;
+                z-index: 10;
+                @include responsiveMax(letter-spacing,9px,8px,7px,6px);
+
             }
             .theDescs{
                 @include h1size();
                 color: $black;
-                margin: 20px 0px 30px;
+                margin: 20px 0px;
+
+                @include responsiveMax(margin-bottom, 30px, 50px, 70px, 90px, 110px);
+                @include responsiveMin(margin-bottom, 30px, 50px, 70px, 90px, 110px);
+                
             }
         }
     }
@@ -53,12 +65,14 @@
                     position: relative;
                     width: 400px;
                     height: 400px;
-                    border:1px solid red;
+                    //border:1px solid red;
                     border-radius: 50%;
                     background-color: $blue;
 
                     @include addborder(red);
-                    
+
+                    @include responsiveMin(width, 400px, 450px, 500px, 550px);
+                    @include responsiveMin(height, 400px, 450px, 500px, 550px);
 
                     .phone01{
                         position: absolute;
@@ -74,6 +88,9 @@
                         pointer-events: none;
 
                         filter: drop-shadow(0px 0px 8px rgba(0,0,0,0.36));
+
+                        @include responsiveMin(width, 450px, 500px, 550px, 600px);
+                        @include responsiveMin(height, 450px, 500px, 550px, 600px);
                     }
                     .phone02{
                         position: absolute;
@@ -89,6 +106,12 @@
 
                         pointer-events: none;
                         filter: drop-shadow(0px 0px 8px rgba(0,0,0,0.5));
+
+                        @include responsiveMin(width, 520px, 570px, 620px, 670px);
+                        @include responsiveMin(height, 520px, 570px, 620px, 670px);
+
+                        @include responsiveMin(right, -190px, -210px, -230px, -250px);
+                        @include responsiveMin(bottom, -150px, -160px, -170px, -180px);
                     }
                 }
                

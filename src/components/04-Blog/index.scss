@@ -10,6 +10,8 @@
     justify-content: center;
     align-items: flex-start;
 
+    overflow-x: hidden;
+
     .Blog04Wrapper{
         @include pageWrapperMediumMargin();
         position: relative;
@@ -32,9 +34,9 @@
 
                 .theTitle{
                     @include h1size();
-                    margin-top: 100px;
                     margin-bottom: 15px;
                     color: $black;
+                    @include responsiveMax(margin-top, 100px, 90px, 80px, 70px, 60px, 50px);
                 }
                 .theContent{
                     color: $grey;
@@ -51,16 +53,23 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            margin-bottom: 18%;
 
             .Blog04WrapperBodyItem{
                 //@include addborder(green, dotted);
                 position: inherit;
                 padding: 16px 0px;
 
-                width: 320px;
-                height: 380px;
                 text-align: left;
-                margin-bottom: 150px;
+                //margin-bottom: 150px;
+                margin-left: 10px;
+                margin-right: 10px;
+
+                @include responsiveMin(width, 320px, 350px, 400px, 430px, 490px);
+                @include responsiveMax(width, 320px, 290px, 250px, 220px, 200px, 140px);
+
+                @include responsiveMin(height, 380px, 410px, 480px, 560px, 659px);
+                @include responsiveMax(height, 380px, 350px, 320px, 290px, 250px, 160px);
   
                 .Blog04WrapperBodyItemPhoto{
                         position: inherit;
@@ -99,12 +108,14 @@
                 }
 
                 &:nth-of-type(1){
+                    margin-left: 0px;
                     .colorfulBT{
                         background-color: $yellow;
                     }
                 }
 
                 &:nth-of-type(3){
+                    margin-right: 0px;
                     .Blog04WrapperBodyItemPhoto{
                         background-position: 80% 50%;
                     }

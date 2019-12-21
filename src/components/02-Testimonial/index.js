@@ -9,10 +9,10 @@ export default class Testimonial02 extends Component{
                 <div className='Testimonial02WrapperHead'>
                     <div className='Testimonial02WrapperHeadWrapper'>
                         <div className='Testimonial02WrapperHeadWrapperTitle'>
-                            We Are Loved By Users And Clients Worldwide
+                            We Are Loved By Users And <br/> Clients Worldwide
                         </div>
                         <div className='Testimonial02WrapperHeadWrapperContent'>
-                            Only those who risk going too far can possibly find out how far one can go.
+                            Only those who risk going too far can possibly find out <br/> how far one can go.
                         </div>
                     </div>
                 </div>

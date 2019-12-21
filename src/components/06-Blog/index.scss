@@ -6,19 +6,20 @@
     background-color: $lightgrey;
     position: relative;
     width: 100%;
-    
+    overflow-x: hidden;
 
     .Blog06Wrapper{
         @include addborder(blue);
-        @include pageWrapperMediumMargin(0px);
+        @include pageWrapperMediumMargin();
         display: flex;
         flex-direction: column;
         position: relative;
+        overflow: hidden;
         
         .Blog06WrapperHead{
             @include addborder(red);
-            margin-top: 100px;
-            margin-bottom: 30px;
+            margin-top: 5%;
+            margin-bottom: 3%;
             position: relative;
             width: 100%;
 
@@ -30,7 +31,9 @@
                 display: flex;
                 flex-direction: column;
                 @include addborder(blue);
-                width:  400px;
+                width:  500px;
+
+                @include responsiveMin(width, 500px, 550px, 600px, 650px, 700px);
 
                 .title01{
                     font-size: 1.25em;

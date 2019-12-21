@@ -2,14 +2,17 @@
 
 .Header01{
     @include mediumPageSize();
-    @include addborder(red);
-    
+
+    @include mediumPageSizeResponsiveMin(618px, 688px, 774px, 826px);
+    @include mediumPageSizeResponsiveMax(618px, 575px, 500px, 420px, 360px);
+
     display: flex;
     justify-content: center;
     
     .Header01Wrapper{
         @include pageWrapperMediumMargin();
 
+        position: relative;
         width: 100%;
         @include addborder(red);
         display: flex;
@@ -63,7 +66,10 @@
 
             display: flex;
             flex-direction: row;
-            padding-top: 80px;
+            padding-top: 3%;
+
+            @include responsiveMin(padding-top, 90px, 100px, 110px);
+            @include responsiveMax(padding-top, 90px, 70px, 55x, 40px);
             
             .navContentLeft{
                 flex: 6;
@@ -82,7 +88,7 @@
                         padding: 10px 0px;
                         padding-top: 0px;
                         //user-select: none;
-                        margin-bottom: 20px;
+                        margin-bottom: 1%;
                         
                         .shoesDesc{
                             color: $grey;
@@ -96,10 +102,14 @@
 
                             max-width: 200px;
                             text-align: left;
-                            margin: 10px 0px;
+                            margin: 1% 0px;
+
+                            @media (min-width: $mediaLarge){
+                                max-width: 300px;
+                            }
                         }
                         .shoesPrice{
-                            margin: 10px 1px;
+                            margin: 1% 1px;
                             font-size: 1.5em;
                             color: $grey;
                         }
@@ -134,6 +144,20 @@
                             left: 0px;
                             top: 0px;
                             border-radius: 10px;
+
+                            @media (min-width: $mediaLarge){
+                                width: 64px;
+                                height: 64px;
+                            }
+
+                            @media (min-width: $mediaBig){
+                                width: 68px;
+                                height: 68px;
+                            }
+                            @media (min-width: $mediaHuge){
+                                width: 80px;
+                                height: 80px;
+                            }
                         }
                         .photoFgImg{
                             position: relative;
@@ -146,6 +170,19 @@
                             background-repeat: no-repeat;
                             background-image: url('./imgs/Air Jordan 6 Retro.png');
                             background-color: transparent;
+
+                            @media (min-width: $mediaLarge){
+                                width: 76px;
+                                height: 76px;
+                            }
+                            @media (min-width: $mediaBig){
+                                width: 80px;
+                                height: 80px;
+                            }
+                            @media (min-width: $mediaHuge){
+                                width: 92px;
+                                height: 92px;
+                            }
                         }
                     }
                     .navContentLeftFootRight{
@@ -200,7 +237,7 @@
                     flex-direction: row;
 
                     .navContentRightWrapperLeft{
-                        flex: 12;
+                        width: 80%;
                         @include addborder(green);
                         position: relative;
                         //overflow: hidden;
@@ -212,6 +249,12 @@
                             border-radius: 50%;
                             left: 0px;
                             top: 0px;
+
+                            @include responsiveMin(width, 400px, 450px, 500px, 550px);
+                            @include responsiveMin(height, 400px, 450px, 500px, 550px);
+
+                            @include responsiveMax(width, 400px, 380px, 360px, 300px, 250px);
+                            @include responsiveMax(height, 400px, 380px, 360px, 300px, 250px);
                         }
                         .bigShoesBgImg{
                             position: absolute;
@@ -223,10 +266,18 @@
                             background-size: 110%;
                             background-position: center;
                             filter: drop-shadow(0px 0px 8px rgba(255,255,255,0.5));
+                        
+
+                            @include responsiveMin(width, 500px, 550px, 600px, 650px);
+                            @include responsiveMin(height, 500px, 550px, 600px, 650px);
+                           
+                            @include responsiveMax(width, 500px, 450px, 430px, 350px, 300px, 250px);
+                            @include responsiveMax(height, 500px, 450px, 430px, 350px, 300px, 250px);
+
                         }
                     }
                     .navContentRightWrapperRight{
-                        flex: 3;
+                        width: 20%;
                         position: relative;
                         display: flex;
 
@@ -243,22 +294,31 @@
                                 
                                 @include addborder(red);
                                 flex-direction: column;
-                                width: 100%;
-                                min-height: 200px;
                                 justify-content: space-between;
-                                align-items: center;
-                               
+                                align-items: flex-end;
+                                width: 100%;
+
+                                min-height: 200px;
+                                @media (min-width: $mediaMedium){
+                                    min-height: 270px;
+                                }
+
                                 .shoesItem{
-                                    flex: 1;
+                                    //@include addborder(red);
                                     position: relative;
-                                    width: 100%;
-                                    
-                                    background-size: 50%;
+                                    width: 60px;
+                                    @media (min-width: $mediaMedium){
+                                        width: 80px;
+                                    }
+                                
+                                    background-size: contain;
                                     background-position: right;
                                     background-repeat: no-repeat;
+                                    margin: 10px;
                                     cursor: pointer;
                     
                                     &:nth-child(1){
+                                        flex: 1;
                                         background-image: url('./imgs/tinyShoe01.png');
                                     }
                                     &:nth-child(2){
@@ -266,11 +326,14 @@
                                         background-image: url('./imgs/tinyShoe02.png');
                                     }
                                     &:nth-child(3){
+                                        flex: 1;
                                         background-image: url('./imgs/tinyShoe03.png');
                                     }
                                     &:hover{
                                         filter: drop-shadow(-4px 4px 4px gray);
                                     }
+
+                                    
                                 }
                             }
                         }

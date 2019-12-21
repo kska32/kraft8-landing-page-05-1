@@ -1,9 +1,85 @@
+//color values definition
 $yellow:#FFA900;
 $grey: #676767;
 $black: #151517;
 $blue: #4D66FF;
 $white: #ffffff;
 $lightgrey: #f1f1f1;
+
+//@media sizes definition
+$mediaMini: 576px;
+
+$mediaTinier: 768px;
+$mediaTiny: 853px;
+
+$mediaSmaller: 1024px;
+$mediaSmall: 1165px;
+
+$mediaMedium: 1281px;
+
+$mediaLarge: 1422px;
+$mediaBig: 1600px;
+$mediaHuge: 1707px;
+$mediaMassive: 1920px;
+
+@mixin responsiveMin($propertyname, $valueAtMedium, $valueAtLarge:null, 
+            $valueAtBig:null, $valueAtHuge:null, $valueAtMassive:null){
+    #{$propertyname}: $valueAtMedium;
+
+    @if ($valueAtLarge != null){
+        @media (min-width: $mediaLarge){
+            #{$propertyname}: $valueAtLarge;
+        }
+    }
+    @if ($valueAtBig != null){
+        @media (min-width: $mediaBig){
+            #{$propertyname}: $valueAtBig;
+        }
+    }
+    @if ($valueAtHuge != null){
+        @media (min-width: $mediaHuge){
+            #{$propertyname}: $valueAtHuge;
+        }
+    }
+    @if($valueAtMassive != null){
+        @media (min-width: $mediaMassive){
+            #{$propertyname}: $valueAtMassive;
+        }
+    }
+}
+
+@mixin responsiveMax($propertyname, $valueAtMedium, $valueAtSmall:null, 
+            $valueAtSmaller:null, $valueAtTiny:null, $valueAtTinier:null, $valueAtMini:null){
+
+        #{$propertyname}: $valueAtMedium;
+
+        @if($valueAtSmall != null){
+            @media (max-width: $mediaSmall){
+                #{$propertyname}: $valueAtSmall;
+            }
+        }
+        @if($valueAtSmaller != null){
+            @media (max-width: $mediaSmaller){
+                #{$propertyname}: $valueAtSmaller;
+            }
+        }
+        @if($valueAtTiny != null){
+            @media (max-width: $mediaTiny){
+                #{$propertyname}: $valueAtTiny;
+            }
+        }
+        @if($valueAtTinier != null){
+            @media (max-width: $mediaTinier){
+                #{$propertyname}: $valueAtTinier;
+            }
+        }
+        @if($valueAtMini != null){
+            @media (max-width: $mediaMini){
+                #{$propertyname}: $valueAtMini;
+            }
+        }
+}
+
 
 
 @mixin addborder($color:black, $style:solid, $width:0.5px){
@@ -12,17 +88,19 @@ $lightgrey: #f1f1f1;
 
 @mixin pageWrapperMediumMargin($hMargin:30px){
     margin: $hMargin 120px;
+    @include responsiveMin(margin, $hMargin 110px, $hMargin 130px ,$hMargin 140px ,$hMargin 150px);
+    @include responsiveMax(margin, $hMargin 110px, ($hMargin - 8px) 100px ,($hMargin - 16px)  90px ,($hMargin - 18px) 60px, ($hMargin - 20px) 30px);
 }
 
 @mixin h1size(){
     font-size: 2.5em;
-    line-height: 1.36em;
+    line-height: 1.38em;
     font-weight: 600 !important;
 }
 
 @mixin h2size(){
     font-size: 2em;
-    line-height: 1.25em;
+    line-height: 1.38em;
     font-weight: 600 !important;
 }
 
@@ -39,6 +117,8 @@ $lightgrey: #f1f1f1;
         opacity: 0.9 !important;
         font-weight: 600 !important;
     }
+
+    @include responsiveMax(padding,15px 40px, 12px 38px, 10px 36px, 8px 34px );
 }
 
 @mixin mediumButton($bgColor:$yellow){
@@ -55,9 +135,59 @@ $lightgrey: #f1f1f1;
 }
 
 @mixin mediumPageSize($height: 618px){
-    position: relative;
-    width: 100%;
-    min-height: $height !important;
-    max-height: $height!important;
-    height: $height !important;
+
+    @if($height != null){
+        position: relative;
+        width: 100%;
+        min-height: $height !important;
+        max-height: $height!important;
+        height: $height !important;
+    }
 }
+
+@mixin mediumPageSizeResponsiveMin($mediumHeight: 618px, $largeHeight: 800px, $bigHeight: 900px, $hugeHeight:100px){
+    @include mediumPageSize($mediumHeight);
+
+    @media (min-width: $mediaLarge){
+        @include mediumPageSize($largeHeight);
+    }
+    @media (min-width: $mediaBig){
+        @include mediumPageSize($bigHeight);
+    }
+    @media (min-width: $mediaHuge){
+        @include mediumPageSize($hugeHeight);
+    }
+}
+
+@mixin mediumPageSizeResponsiveMax(
+    $mediumHeight: 618px, 
+    $smallHeight: null, 
+    $smallerHeight: null, 
+    $tinyHeight: null, 
+    $tinierHeight: null, 
+    $miniHeight: null
+){
+    @include mediumPageSize($mediumHeight);
+
+    @media (max-width: $mediaSmall){
+        @include mediumPageSize($smallHeight);
+    }
+    @media (max-width: $mediaSmaller){
+        @include mediumPageSize($smallerHeight);
+    }
+    @media (max-width: $mediaTiny){
+        @include mediumPageSize($tinyHeight);
+    }
+    @media (max-width: $mediaTinier){
+        @include mediumPageSize($tinierHeight);
+    }
+    @media (max-width: $mediaMini){
+        @include mediumPageSize($miniHeight);
+    }
+    
+
+
+}
+
+
+

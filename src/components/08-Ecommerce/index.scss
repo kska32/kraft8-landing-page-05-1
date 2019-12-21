@@ -1,12 +1,20 @@
 @import '../global.scss';
 
 .Ecommerce08{
-    @include addborder(blue);
-    @include mediumPageSize();
+    //@include addborder(blue);
+    //@include mediumPageSize();
+
+    @include mediumPageSizeResponsiveMax(618px, 500px, 500px, 450px, 400px);
+    @include mediumPageSizeResponsiveMin(618px, 650px, 700px, 750px);
+
     background-color: $lightgrey;
-    padding-top: 80px;
-    padding-bottom: 60px;
+    padding-top: 10%;
+    padding-bottom: 10%;
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .Ecommerce08Wrapper{
         @include addborder(red);
@@ -30,14 +38,16 @@
                 flex-direction: column;
                 text-align: left;
                 justify-content: center;
-                margin-top: 80px;
+
+                @include responsiveMax(margin-top, 60px, 55px, 50px, 45px, 40px );
+               // @include responsiveMin(margin-top, 60px, 55px, 50px, 45px, 40px );
 
                 .avatarGroup{
                     position: inherit;
                     @include addborder(grey,dashed);
                     display: flex;
                     justify-content: center;
-                    margin-bottom: 30px;
+                    margin-bottom: 5%;
                     width: 70%;
 
                     .avatar{
@@ -68,12 +78,12 @@
                     @include h1size();
                     position: relative;
                     width: 70%;
-                    margin-bottom: 50px;
+                    margin-bottom: 8%;
                 }
                 .theDescs{
                     position: relative;
                     width: 70%;
-                    margin-bottom: 60px;
+                    margin-bottom: 8%;
                 }
                 .cartGroup{
                     position: relative;
@@ -103,6 +113,7 @@
                     width: 70%;
                     display: flex;
                     flex-direction: row;
+                    margin-bottom: 10px;
 
                     .theBed{
                         position: relative;
@@ -138,7 +149,9 @@
             .bigImage{
                 position: relative;
                 width: 100%;
-                height: 600px;
+                @include responsiveMax(height, 600px, 550px, 500px, 450px, 400px, 350px);
+                @include responsiveMin(height, 600px, 650px, 700px, 750px, 800px);
+
                 @include addborder(red);
 
                 background-position: center;

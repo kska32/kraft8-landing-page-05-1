@@ -23,7 +23,7 @@ export default class Header01 extends Component{
                         <div className='navContentLeftHead'>
                             <div className='theInfos'>
                                 <div className='shoesDesc'>Men's Running Shoe</div>
-                                <div className='shoesName'>Nike Joyride Run Flyknit</div>
+                                <div className='shoesName'>Nike Joyride <br/> Run Flyknit</div>
                                 <div className='shoesPrice'>$180</div>
                             </div>
                             <div className='theButton'>

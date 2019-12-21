@@ -41,7 +41,7 @@ export default class Team05 extends Component{
         return <div className='Team05'>
             <div className='Team05head'>
                 <div className='Team05headWrapper'>
-                    Teamwork Makes The Dream Work
+                    Teamwork Makes <br/> The Dream Work
                 </div>
             </div>
             <div className='Team05body'>
