@@ -13,7 +13,7 @@
     @include mediumPageSizeResponsiveMin(650px, 750px, 850px, 950px);
     @include mediumPageSizeResponsiveMax(650px, 600px, 550px, 500px, 450px, 400px);
 
-    overflow-x: hidden;
+    overflow: hidden;
 
     .Testimonial02Wrapper{
         position: relative;

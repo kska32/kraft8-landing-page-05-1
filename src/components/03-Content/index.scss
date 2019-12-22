@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
 
-    overflow-x: hidden;
+    overflow: hidden;
 
     .Content03Wrapper{
         @include addborder(red);
