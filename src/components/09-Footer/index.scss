@@ -12,6 +12,8 @@
     padding-top: 8%;
     padding-bottom: 3%;
 
+    background-color: $white;
+
     .Footer09Wrapper{
         @include addborder(grey);
         @include pageWrapperMediumMargin(0px);
