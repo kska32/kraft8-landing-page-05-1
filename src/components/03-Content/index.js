@@ -1,10 +1,21 @@
 import React,{Component} from "react";
+import {ContextConsumer} from "../context";
+import {simpleIoCallback, ioCallback, animate} from "../utils";
 import "./index.scss";
 
 
-export default class Content03 extends Component{
+export class Content03 extends Component{
+    componentDidMount(){
+        ioCallback('.Content03',()=>{
+            this.props.global.setState({bullet02: true});
+        },()=>{
+            this.props.global.setState({bullet02: false});
+        })
+        simpleIoCallback('.Content03WrapperRight', 'fadeInDown');
+        simpleIoCallback('.Content03WrapperLeft', 'fadeInUp');
+    }
     render(){
-        return <div className="Content03">
+        return <div className="Content03" id={this.props.id}>
             <div className="Content03Wrapper">
                 <div className="Content03WrapperLeft">
                     <div className="Content03WrapperLeftHead">
@@ -46,3 +57,9 @@ export default class Content03 extends Component{
         </div>
     }
 }
+
+export default (props) => (
+    <ContextConsumer>
+        {gstate => <Content03 {...props} global={gstate} />}
+    </ContextConsumer>
+);

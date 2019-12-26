@@ -1,13 +1,24 @@
 import React,{Component} from "react";
+import {ContextConsumer} from "../context";
+import {simpleIoCallback, ioCallback, animate} from "../utils";
 import "./index.scss";
 
 import phone01 from './imgs/phone01.png';
 import phone02 from './imgs/phone02.png';
 
 
-export default class Portfolio07 extends Component{
+export class Portfolio07 extends Component{
+    componentDidMount(){
+        ioCallback('.Portfolio07',()=>{
+            this.props.global.setState({bullet06: true});
+        },()=>{
+            this.props.global.setState({bullet06: false});
+        });
+
+        simpleIoCallback('.Portfolio07', 'jackInTheBox fast');
+    }
     render(){
-        return <div className="Portfolio07">
+        return <div className="Portfolio07" id={this.props.id}>
             <div className='PortFolio07Head'>
                 <div className='PortFolio07HeadWrapper'>
                     <div className='theTitle'>PORTFOLIO</div>
@@ -39,3 +50,9 @@ export default class Portfolio07 extends Component{
         </div>
     }
 }
+
+export default (props) => (
+    <ContextConsumer>
+        {gstate => <Portfolio07 {...props} global={gstate} />}
+    </ContextConsumer>
+);

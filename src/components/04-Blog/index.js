@@ -1,11 +1,13 @@
 import React,{Component} from "react";
+import {ContextConsumer} from "../context";
+import {simpleIoCallback, ioCallback, animate} from "../utils";
 import "./index.scss";
 
 import img01 from "./imgs/friend01.png";
 import img02 from "./imgs/friend02.png";
 import img03 from "./imgs/friend03.png";
 
-export default class Blog04 extends Component{
+export class Blog04 extends Component{
     constructor(props){
         super(props);
         this.items = [
@@ -26,8 +28,24 @@ export default class Blog04 extends Component{
             }
         ]
     }
+    componentDidMount(){
+        ioCallback('.Blog04',()=>{
+            this.props.global.setState({bullet03: true});
+        },()=>{
+            this.props.global.setState({bullet03: false});
+        })
+
+        simpleIoCallback('.Blog04WrapperHeadWrapper','rollIn fast');
+
+        document.querySelectorAll('.Blog04WrapperBodyItem')            
+            .forEach((v,i)=>{
+                simpleIoCallback(`.${v.className.split(' ')[0]}:nth-of-type(${i+1})`, 'rollIn fast')
+            })
+    }
+
+
     render(){
-        return <div className='Blog04'>
+        return <div className='Blog04' id={this.props.id}>
             <div className='Blog04Wrapper'>
                 <div className='Blog04WrapperHead'>
                     <div className='Blog04WrapperHeadWrapper'>
@@ -57,3 +75,9 @@ export default class Blog04 extends Component{
         </div>
     }
 }
+
+export default (props) => (
+    <ContextConsumer>
+        {gstate => <Blog04 {...props} global={gstate} />}
+    </ContextConsumer>
+);

@@ -254,8 +254,8 @@
                             @include responsiveMin(width, 400px, 450px, 500px, 550px);
                             @include responsiveMin(height, 400px, 450px, 500px, 550px);
 
-                            @include responsiveMax(width, 400px, 380px, 360px, 300px, 250px);
-                            @include responsiveMax(height, 400px, 380px, 360px, 300px, 250px);
+                            @include responsiveMax(width, 400px, 380px, 360px, 340px, 320px);
+                            @include responsiveMax(height, 400px, 380px, 360px, 340px, 320px);
                         }
                         .bigShoesBgImg{
                             position: absolute;
@@ -263,18 +263,30 @@
                             top: 0px;
                             width: 500px;
                             height: 500px;
-                            background-image: url('./imgs/bigShoe.png');
-                            background-size: 110%;
+                            background-image: url('./imgs/bigShoe02.png');
+                            background-size: 100%;
                             background-position: center;
+                            background-repeat: no-repeat;
+                            
                             filter: drop-shadow(0px 0px 8px rgba(255,255,255,0.5));
-                        
 
                             @include responsiveMin(width, 500px, 550px, 600px, 650px);
                             @include responsiveMin(height, 500px, 550px, 600px, 650px);
                            
-                            @include responsiveMax(width, 500px, 450px, 430px, 350px, 300px, 250px);
-                            @include responsiveMax(height, 500px, 450px, 430px, 350px, 300px, 250px);
+                            @include responsiveMax(width, 500px, 480px, 460px, 440px, 420px);
+                            @include responsiveMax(height, 500px, 480px, 460px, 440px, 420px);
 
+                            &[data-index=index0]{
+                                top: -80px;
+                                background-size: 90%;
+                            }
+                            &[data-index=index1]{
+
+                            }
+                            &[data-index=index2]{
+                                top: -50px;
+                                background-size: 90%;
+                            }
                         }
                     }
                     .navContentRightWrapperRight{

@@ -1,4 +1,6 @@
 import React,{Component} from "react";
+import {ContextConsumer} from "../context";
+import {simpleIoCallback, ioCallback, animate} from "../utils";
 import "./index.scss";
 
 import p01 from './imgs/p01.png';
@@ -8,7 +10,7 @@ import p04 from './imgs/p04.png';
 import p05 from './imgs/p05.png';
 
 
-export default class Team05 extends Component{
+export class Team05 extends Component{
     items = [
         {
             img: p01,
@@ -37,8 +39,22 @@ export default class Team05 extends Component{
         }
     ];
 
+    componentDidMount(){
+        ioCallback('.Team05',()=>{
+            this.props.global.setState({bullet04: true});
+        },()=>{
+            this.props.global.setState({bullet04: false});
+        });
+
+        simpleIoCallback('.Team05headWrapper', 'fadeInDown fast');
+        document.querySelectorAll('.Team05bodyWrapperItem')            
+            .forEach((v,i)=>{
+                simpleIoCallback(`.${v.className.split(' ')[0]}:nth-child(${i+1})`, i%2 ? 'fadeInDown fast': 'fadeInUp fast')
+            });
+    }
+
     render(){
-        return <div className='Team05'>
+        return <div className='Team05' id={this.props.id}>
             <div className='Team05head'>
                 <div className='Team05headWrapper'>
                     Teamwork Makes <br/> The Dream Work
@@ -64,3 +80,10 @@ export default class Team05 extends Component{
         </div>
     }
 }
+
+
+export default (props) => (
+    <ContextConsumer>
+        {gstate => <Team05 {...props} global={gstate} />}
+    </ContextConsumer>
+);

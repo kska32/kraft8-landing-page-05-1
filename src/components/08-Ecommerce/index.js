@@ -1,13 +1,30 @@
 import React,{Component} from "react";
+import {ContextConsumer} from "../context";
+import {simpleIoCallback, ioCallback, animate} from "../utils";
 import "./index.scss";
 
 import avatar from './imgs/avatar.png';
 import bed from './imgs/bed.png';
 import sofa from './imgs/sofa.png'
 
-export default class Ecommerce08 extends Component{
+export class Ecommerce08 extends Component{
+
+    componentDidMount(){
+        ioCallback('.Ecommerce08',()=>{
+            this.props.global.setState({bullet07: true});
+        },()=>{
+            this.props.global.setState({bullet07: false});
+        });
+
+        ioCallback('.Ecommerce08Wrapper',()=>{
+            animate('.Ecommerce08WrapperRight','rotateInDownLeft fast');
+            animate('.Ecommerce08WrapperLeftHead', 'rotateInDownRight fast');
+            animate('.Ecommerce08WrapperLeftFoot', 'rotateInDownLeft fast');
+        });
+    }
+
     render(){
-        return <div className="Ecommerce08">
+        return <div className="Ecommerce08" id={this.props.id}>
             <div className='Ecommerce08Wrapper'>
                 <div className='Ecommerce08WrapperLeft'>
                     <div className='Ecommerce08WrapperLeftHead'>
@@ -48,3 +65,9 @@ export default class Ecommerce08 extends Component{
        
     }
 }
+
+export default (props) => (
+    <ContextConsumer>
+        {gstate => <Ecommerce08 {...props} global={gstate} />}
+    </ContextConsumer>
+);

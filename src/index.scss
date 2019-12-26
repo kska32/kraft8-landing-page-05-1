@@ -17,6 +17,8 @@ body {
   align-items: center;
 
   background-color: orange;
+
+  overflow-x: hidden;
 }
 
 code {
@@ -24,7 +26,21 @@ code {
 }
 
 *:not(.mee-icon):not(.fa):not(i):not(em){
-  /*font-family: 中文楷体,sans-serif,auto;*/
   font-weight: 500 !important;
   text-shadow: none !important;
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee;
+  //opacity: 0.5;
+  box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.5 );
+}
+
+::-webkit-scrollbar-thumb {
+  background: $yellow;
+}
+

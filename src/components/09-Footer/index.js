@@ -1,10 +1,26 @@
 import React,{Component} from "react";
+import {ContextConsumer} from "../context";
+import {simpleIoCallback, ioCallback, animate} from "../utils";
 import "./index.scss";
 
+export class Footer09 extends Component{
 
-export default class Footer09 extends Component{
+    componentDidMount(){
+        ioCallback('.Footer09',()=>{
+            this.props.global.setState({bullet08: true});
+        },()=>{
+            this.props.global.setState({bullet08: false});
+        });
+
+        ioCallback('.Footer09Wrapper',()=>{
+            animate('.Footer09Wrapper','zoomInDown fast');
+            animate('.Footer09Wrapper', 'zoomInDown fast');
+            animate('.Footer09Wrapper', 'zoomInDown fast');
+        });
+    }
+
     render(){
-        return <div className="Footer09">
+        return <div className="Footer09" id={this.props.id}>
             <div className='Footer09Wrapper'>
                 <div className='Footer09WrapperLeft'>
                     <div className='Footer09WrapperLeftHead'>
@@ -46,3 +62,9 @@ export default class Footer09 extends Component{
         </div>
     }
 }
+
+export default (props) => (
+    <ContextConsumer>
+        {gstate => <Footer09 {...props} global={gstate} />}
+    </ContextConsumer>
+);

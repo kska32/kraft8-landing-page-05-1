@@ -1,4 +1,6 @@
 import React,{Component} from "react";
+import {ContextConsumer} from "../context";
+import {simpleIoCallback, ioCallback, animate} from "../utils";
 import "./index.scss";
 
 import bg01 from './imgs/bg01.png';
@@ -11,7 +13,7 @@ import p02 from './imgs/p02.png';
 import p03 from './imgs/p03.png';
 import p04 from './imgs/p04.png';
 
-export default class Blog06 extends Component{
+export class Blog06 extends Component{
     items = [
         {
             title01: 'Why Design Systems Are Going To Shape The Internet',
@@ -47,8 +49,25 @@ export default class Blog06 extends Component{
         }
     ]
 
+    componentDidMount(){
+        ioCallback('.Blog06',()=>{
+            this.props.global.setState({bullet05: true});
+        },()=>{
+            this.props.global.setState({bullet05: false});
+        });
+
+        simpleIoCallback('.Blog06WrapperHeadWrapper', 'flip fast');
+
+        ioCallback('.Blog06WrapperBody',()=>{
+            animate(`.Blog06WrapperBodyItem:nth-of-type(1)`, 'fadeInUp fast');
+            animate(`.Blog06WrapperBodyItem:nth-of-type(2)`, 'fadeInLeft fast');
+            animate(`.Blog06WrapperBodyItem:nth-of-type(3)`, 'fadeInRight fast');
+            animate(`.Blog06WrapperBodyItem:nth-of-type(4)`, 'fadeInDown fast');
+        })
+    }
+
     render(){
-        return <div className="Blog06">
+        return <div className="Blog06" id={this.props.id}>
             <div className="Blog06Wrapper">
                 <div className="Blog06WrapperHead">
                     <div className="Blog06WrapperHeadWrapper">
@@ -95,3 +114,9 @@ export default class Blog06 extends Component{
         </div>
     }
 }
+
+export default (props) => (
+    <ContextConsumer>
+        {gstate => <Blog06 {...props} global={gstate} />}
+    </ContextConsumer>
+);
