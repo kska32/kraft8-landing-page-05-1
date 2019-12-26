@@ -30,7 +30,7 @@ export default class App extends PureComponent{
             setState: obj=>this.setState({...obj})
         }
 
-        this.pageIcons = [ '🍱', '🍝', '🍕', '🌭', '🌮', '🍿', '🥓', '🍖', '🥡']
+        this.pageIcons = ['🍬','🍤', '🍕', '🍝', '🌭', '🌮', '🍿', '🥓', '🍖']
     }
 
     bulletsOnClick = ({target})=>{
