@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import {ContextConsumer} from "../context";
-import {simpleIoCallback, ioCallback, animate} from "../utils";
+import {ioCallback, animate} from "../utils";
 import "./index.scss";
 
 import avatar from './imgs/avatar.png';

@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import {Helmet} from "react-helmet";
 import {ContextConsumer} from "../context";
 import {ioCallback, animate} from "../utils";
 
@@ -65,6 +66,11 @@ class Header01 extends Component{
         let {clickedTinyShoeNo} = this.state;
 
         return <div className="Header01" id={this.props.id}>
+                        <Helmet>
+                            <link rel="preload" as="image" href={bigShoe01}/>
+                            <link rel="preload" as="image" href={bigShoe02}/>
+                            <link rel="preload" as="image" href={bigShoe03}/>
+                        </Helmet>
                         <div className="Header01Wrapper">
                             <div className="navBar">
                                 <div className="navBarLeft">
